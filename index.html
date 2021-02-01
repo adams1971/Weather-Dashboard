@@ -17,7 +17,7 @@
   <div class ="contaner">
         <div class ="row">
             
-            <div class = "col-md-3">
+            <div class = "col-md-3 bg-light">
                 <div class = "card search-area">
 
                     <div class = "card-body">
@@ -26,7 +26,7 @@
                             <!-- Shangri-La as placeholder-->
                             <input id = "cityEntered" type = "text" class = "form-control" placeholder = "Shangri-La">
                                 <div class = "input-group-append">
-                                    <button id="showEnteredCityWeather" class= "btn-primary" type="submit">
+                                    <button id="searchCityBtn" class= "btn-primary" type="submit">
                                         <!--getWeather and font awesome icon dynamically-->
                                     </button>
                                 </div>       
@@ -37,35 +37,73 @@
 
                 </div>
             </div>
-
-        </div>
-
-        <div class ="col-md-9">
-            <div class = "row">
-                <div class = "card">
-                    <div class ="card-body">
-
-                        <h3 class = "card-title" id = "cityName">City</h3>
-                        <!--li of weather value load using JS-->
-                        <!-- add weather img icon font aswesome-->
-                        <ul>
-                            <!--<li weather img icon-->
-                            <li class = "card-text" id = "currentTemp">Temp:</li>
-                            <li class = "card-text" id = "currentHum">Hummidity:</li>    
-                            <li class = "card-text" id = "currentWind">Wind Speed:</li>
-                            <li class = "card-text" id = "currentUVI">UV Index:</li>
-                        </ul>
+            <div class ="col-md-9 bg-light">
+                <div class = "row">
+                    <div class = "card">
+                        <div class ="card-body">
+    
+                            <h3 class = "card-title" id = "cityName">City</h3>
+                            <!--li of weather value load using JS-->
+                            <!-- add weather img icon font aswesome-->
+                            <ul>
+                                <!--<li weather img icon-->
+                                <li class = "card-text" id = "currentTemp">Temp:</li>
+                                <li class = "card-text" id = "currentHum">Hummidity:</li>    
+                                <li class = "card-text" id = "currentWind">Wind Speed:</li>
+                                <li class = "card-text" id = "currentUVI">UV Index:</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                
             </div>
             <!-- add 5 day forcast row-->
             <div class = "row">
-                <h3 class = "card-title" id = "fiveDayForcast">5 Day Forcast</h3>
+                <h3 class = "card-title" id = "fiveDayForecast">5 Day Forcast</h3>
             </div>
-            <!-- five day forcast loaded dynamically in JS-->
-            <div class = "row" id = "forcast"></div>
-        </div>
-  </div>
+            <!-- five day forcast cards loaded (dynamically??) in JS-->
+            <div class = "row">     
+                <div class = "forecastCard" id = "card1">
+                        <h5>Date</h5>
+                        <I>Icon</I>
+                        <h5>Temp</h5>
+                        <h5>Hummidity</h5>
+                        <h5>UVI</h5>
+                    </div>
+
+                    <div class = "forecastCard" id = "card2">
+                        <h5>Date</h5>
+                        <I>Icon</I>
+                        <h5>Temp</h5>
+                        <h5>Hummidity</h5>
+                        <h5>UVI</h5>
+                    </div>
+
+                    <div class = "forecastCard" id = "card3">
+                        <h5>Date</h5>
+                        <I>Icon</I>
+                        <h5>Temp</h5>
+                        <h5>Hummidity</h5>
+                        <h5>UVI</h5>
+                    </div>
+
+                    <div class = "forecastCard" id = "card4">
+                        <h5>Date</h5>
+                        <I>Icon</I>
+                        <h5>Temp</h5>
+                        <h5>Hummidity</h5>
+                        <h5>UVI</h5>
+                    </div>
+
+                    <div class = "forecastCard" id = "card5">
+                        <h5>Date</h5>
+                        <I>Icon</I>
+                        <h5>Temp</h5>
+                        <h5>Hummidity</h5>
+                        <h5>UVI</h5>
+                    </div>
+        </div>  
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
