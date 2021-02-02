@@ -21,6 +21,9 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
             $("#cityName").text(response.name);
+            $("#currentTemp").text(response.main.temp)
+            $("#currentHum").text(response.main.humidity)
+            $("#currentWind").text(response.wind.speed)
         });
  
         var weatherUVI = "";//remember to add the api url
