@@ -1,113 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shangri-La</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-   
-  <!--Navbar as a heading -->
-  <nav class="navbar navbar-light bg-dark navbar-dark text-align: center">
-    <span class="navbar-brand mx-auto">Weather Dashboard</span>
-  </nav>
-  <!--container with rows and col-->
-  <div class ="contaner">
-      <h3></h3>
-      <p id = "date"></p>
-        <div class ="row">
-            
-            <div class = "col-md-3 bg-light">
-                <div class = "card search-area">
 
-                    <div class = "card-body">
+<body>
+
+    <!--Navbar as a heading -->
+    <nav class="navbar navbar-light bg-dark navbar-dark text-align: center">
+        <span class="navbar-brand mx-auto">Weather Dashboard</span>
+        <button class="btn btn-secondary clear">Clear</button>
+    </nav>
+    <!--container with rows and col-->
+    <div class="contaner">
+        <h3></h3>
+        <p id="date"></p>
+        <div class="row">
+
+            <div class="col-md-3 bg-light">
+                <div class="card search-area">
+
+                    <div class="card-body">
                         <label>Find Your Shangri-La</label>
-                        <div class = "input-group mb-3">
+                        <div class="input-group mb-3">
                             <!-- Shangri-La as placeholder-->
-                            <input id = "cityEntered" type = "text" class = "form-control" placeholder = "Shangri-La">
-                                <div class = "input-group-append">
-                                    <button id="searchCityBtn" class= "btn-primary" type="submit">Search
-                                        <!--getWeather and font awesome icon dynamically-->
-                                    </button>
-                                </div>       
-                            <div id = "Current-Search"></div>
-                            <div id = "Past-Searches"></div>
+                            <input id="cityEntered" type="text" class="form-control" placeholder="Shangri-La">
+                            <div class="input-group-append" style="margin-top: .5rem">
+                                <button id="searchCityBtn" class="btn-primary" type="submit">Search
+                                    <!--getWeather and font awesome icon dynamically-->
+                                </button>
+                            </div>
+                            
+                            <div id="Current-Search"></div>
+                            <div id="Past-Searches"></div>
                         </div>
                     </div>
 
                 </div>
             </div>
-            <div class ="col-md-9 bg-light">
-                <div class = "row">
-                    <div class = "card">
-                        <div class ="card-body">
-    
-                            <h3 class = "card-title" id = "cityName">City</h3>
+            <div class="col-md-9 bg-light">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h3 class="card-title" id="cityName">City</h3>
                             <!--li of weather value load using JS-->
                             <!-- add weather img icon font aswesome-->
-                            <ul>
+                            <div>
                                 <!--<li weather img icon-->
-                                <li class = "card-text" id = "currentTemp">Temp: </li>
-                                <li class = "card-text" id = "currentHum">Humidity: </li>    
-                                <li class = "card-text" id = "currentWind">Wind Speed: </li>
-                                <li class = "card-text" id = "currentUVI">UVI Index: </li>
-                            </ul>
+                                <p class="card-text" id="currentTemp">Temperature: </p>
+                                <p class="card-text" id="currentHum">Humidity: </p>
+                                <p class="card-text" id="currentWind">Wind Speed: </p>
+                                <p class="card-text" id="currentUVI">UVI Index: </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
-            <!-- add 5 day forcast row-->
-        <div id = "row">
-            <h3 class = "card-title" id = "fiveDayForecast"> 5 Day Forcast</h3>
+        <!-- add 5 day forcast row-->
+        <div >
+            <h3> 5 Day Forcast</h3>
+
+            <div class="row" id="fiveDayForecast"></div>
         </div>
 
-        <div class = "row">  
-            <div class = "forecastCard" id = "card1">
-                <h5>Date</h5>
-                <I>Icon</I>
-                <h5>Temp</h5>
-                <h5>Humidity</h5>
-                <h5>UVI</h5>
-            </div>
+        
 
-            <div class = "forecastCard" id = "card2">
-                <h5>Date</h5>
-                <I>Icon</I>
-                <h5>Temp</h5>
-                <h5>Humidity</h5>
-                <h5>UVI</h5>
-            </div>
 
-            <div class = "forecastCard" id = "card3">
-                <h5>Date</h5>
-                <I>Icon</I>
-                <h5>Temp</h5>
-                <h5>Humidity</h5>
-                <h5>UVI</h5>
-            </div>
-
-            <div class = "forecastCard" id = "card4">
-                <h5>Date</h5>
-                <I>Icon</I>
-                <h5>Temp</h5>
-                <h5>Humidity</h5>
-                <h5>UVI</h5>
-            </div>
-
-            <div class = "forecastCard" id = "card5">
-                <h5>Date</h5>
-                <I>Icon</I>
-                <h5>Temp</h5>
-                <h5>Humidity</h5>
-                <h5>UVI</h5>
-            </div> 
-        </div>        
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
+
 </html>
