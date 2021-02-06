@@ -16,6 +16,8 @@
   </nav>
   <!--container with rows and col-->
   <div class ="contaner">
+      <h3></h3>
+      <p id = "date"></p>
         <div class ="row">
             
             <div class = "col-md-3 bg-light">
@@ -48,66 +50,64 @@
                             <!-- add weather img icon font aswesome-->
                             <ul>
                                 <!--<li weather img icon-->
-                                <li class = "card-text" id = "currentTemp">Temp:</li>
-                                <li class = "card-text" id = "currentHum">Hummidity:</li>    
-                                <li class = "card-text" id = "currentWind">Wind Speed:</li>
-                                <li class = "card-text" id = "currentUVI">UV Index:</li>
+                                <li class = "card-text" id = "currentTemp">Temp: </li>
+                                <li class = "card-text" id = "currentHum">Humidity: </li>    
+                                <li class = "card-text" id = "currentWind">Wind Speed: </li>
+                                <li class = "card-text" id = "currentUVI">UVI Index: </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 
             </div>
+        </div>
+
             <!-- add 5 day forcast row-->
-            <div class = "row">
-                <h3 class = "card-title" id = "fiveDayForecast">5 Day Forcast</h3>
+        <div id = "row">
+            <h3 class = "card-title" id = "fiveDayForecast"> 5 Day Forcast</h3>
+        </div>
+
+        <div class = "row">  
+            <div class = "forecastCard" id = "card1">
+                <h5>Date</h5>
+                <I>Icon</I>
+                <h5>Temp</h5>
+                <h5>Humidity</h5>
+                <h5>UVI</h5>
             </div>
-            <!-- five day forcast cards loaded (dynamically??) in JS-->
-            <div class = "row">     
-                <div class = "forecastCard" id = "card1">
-                        <h5>Date</h5>
-                        <I>Icon</I>
-                        <h5>Temp</h5>
-                        <h5>Hummidity</h5>
-                        <h5>UVI</h5>
-                    </div>
 
-                    <div class = "forecastCard" id = "card2">
-                        <h5>Date</h5>
-                        <I>Icon</I>
-                        <h5>Temp</h5>
-                        <h5>Hummidity</h5>
-                        <h5>UVI</h5>
-                    </div>
+            <div class = "forecastCard" id = "card2">
+                <h5>Date</h5>
+                <I>Icon</I>
+                <h5>Temp</h5>
+                <h5>Humidity</h5>
+                <h5>UVI</h5>
+            </div>
 
-                    <div class = "forecastCard" id = "card3">
-                        <h5>Date</h5>
-                        <I>Icon</I>
-                        <h5>Temp</h5>
-                        <h5>Hummidity</h5>
-                        <h5>UVI</h5>
-                    </div>
+            <div class = "forecastCard" id = "card3">
+                <h5>Date</h5>
+                <I>Icon</I>
+                <h5>Temp</h5>
+                <h5>Humidity</h5>
+                <h5>UVI</h5>
+            </div>
 
-                    <div class = "forecastCard" id = "card4">
-                        <h5>Date</h5>
-                        <I>Icon</I>
-                        <h5>Temp</h5>
-                        <h5>Hummidity</h5>
-                        <h5>UVI</h5>
-                    </div>
+            <div class = "forecastCard" id = "card4">
+                <h5>Date</h5>
+                <I>Icon</I>
+                <h5>Temp</h5>
+                <h5>Humidity</h5>
+                <h5>UVI</h5>
+            </div>
 
-                    <div class = "forecastCard" id = "card5">
-                        <h5>Date</h5>
-                        <I>Icon</I>
-                        <h5>Temp</h5>
-                        <h5>Hummidity</h5>
-                        <h5>UVI</h5>
-                    </div>
-        </div>  
-    </div>
-
-
-    
+            <div class = "forecastCard" id = "card5">
+                <h5>Date</h5>
+                <I>Icon</I>
+                <h5>Temp</h5>
+                <h5>Humidity</h5>
+                <h5>UVI</h5>
+            </div> 
+        </div>        
     <script src="script.js"></script>
 </body>
 </html>
