@@ -1,13 +1,18 @@
 # Weather-Dashboard
 Weather Application
 
-## Your Task
+## My Task
 
-Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+To create a weather app using an API that will display users searched cities current weather (temp, humidity, wind speed and uv index). Additionally the app will display the five day forcast. Each city search will be stored in local storage and will create a re-call button. 
+To accomplish this I used Open Weather Map third-party API. Some of my challenges were connecting 3 different api's from OWM's site. I used 3 api's to accomplish longitude and latitude locations, UVI and daily forcasting. When I tried to use the Onecall API on its own, the 5 day forecast displayed 5- 3 hours forcast cards. To overcome this challenge, I needed to use an addiotional API for the daily forcast. For the current time, I used moment.js to displays the most up to date time related to the most current search. 
 
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that provides basic setup and usage instructions. You will use `localStorage` to store any persistent data.
+One challenge not over come was to refresh the five forcast when selecting a past search city. This function only updated the current temp card, leaving the five day cards as the privious search.
 
-S A traveler
+Additional steps were taken to update the css and html- this site was build from thr ground up. 
+
+
+The Problem
+AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 ```
