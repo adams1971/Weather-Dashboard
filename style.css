@@ -26,19 +26,6 @@ h4 {
     color: black;
 }
 
-/*.forecastCard {
-    border-radius: 40px;
-    width: 15rem;
-    background-color: blue;
-    color: white;
-    font-size: 1.5rem;
-    padding-inline-start: 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-right: 30px;
-    margin-left: 30px;
-}*/
-
 .row {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -49,3 +36,13 @@ h4 {
 #row {
     text-align: center;
 }
+
+.card-body {
+    background-color: #189ad3;
+    padding: #189ad3;
+    color: white;
+}
+
+.col {
+    padding: 0;
+    background-color:#189ad3;
