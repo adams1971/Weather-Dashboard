@@ -105,7 +105,7 @@ $(document).ready(function () {
       console.log("tempWeather line 96= ", tempWeather);
       var tempHead = $("<div>").attr({
         class: "col-sm-2 border rounded",
-        style: "background: blue; margin-right: auto; margin-left: auto;"
+        style: "background: #189ad3; margin-right: auto; margin-left: auto;"
       });
       var tempDate = $("<p>").text(moment(tempWeather.dt_txt).format("MM/DD/YYYY"));
       tempDate.attr("class", "text-white");
