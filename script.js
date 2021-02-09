@@ -149,7 +149,7 @@ $(document).ready(function () {
   }
 
   function getIcon(iconID) {
-    return "http://openweathermap.org/img/wn/" + iconID + "@2x.png";
+    return "https://openweathermap.org/img/wn/" + iconID + "@2x.png";
   }
 
   function humidityText(humidity) {
