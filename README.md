@@ -9,7 +9,7 @@ Additional steps were taken to update the css and html- this site was built from
 
 ### The Problem
 AS A travelerI WANT to see the weather outlook for multiple cities 
-'SO THAT I can plan a trip accordingly
+'''SO THAT I can plan a trip accordingly
 
 # Acceptance Criteria
 #### GIVEN a weather dashboard with form inputs
