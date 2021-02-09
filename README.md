@@ -1,5 +1,5 @@
 # Weather-Dashboard
-Weather Application
+
 
 ## My Task
 
@@ -11,7 +11,7 @@ One challenge not over come was to refresh the five forcast when selecting a pas
 Additional steps were taken to update the css and html- this site was build from thr ground up. 
 
 
-The Problem
+### The Problem
 AS A traveler
 I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
@@ -31,4 +31,11 @@ WHEN I view future weather conditions for that city
 THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
 WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
+
+## Technoligies used 
+Html
+CSS
+JavaScript
+Jquiery
+OpenWeatherMap API's
 ```
