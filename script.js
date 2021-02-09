@@ -24,6 +24,7 @@ $(document).ready(function () {
     var cityEntered = $("#cityEntered").val();
 
     var selectedUrl = weatherURL + cityEntered + farenheit + appId + apiKey;
+    var forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityEntered+ appId + apiKey;
 
     $.ajax({
       url: selectedUrl,
@@ -35,15 +36,21 @@ $(document).ready(function () {
       var uvURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + appId + apiKey;
 
       $.ajax({
-        url: uvURL,
-        method: "GET",
-      }).then(function (res) {
-        console.log("res= ", res)
-        updateWeather(tempWeather.name, tempWeather, res);
-        rendorPastSearches();
-        callWeatherInfo(currentSearch.length - 1);
-        callUviIndex(currentSearch.length - 1);
-        callForecast(currentSearch.length - 1);
+        url: forecastUrl,
+        method: "GET"
+      }).then(function (response) {
+        var tempForecast = response;
+        $.ajax({
+          url: uvURL,
+          method: "GET",
+        }).then(function (res) {
+          console.log("res= ", res)
+          updateWeather(tempWeather.name, tempWeather, tempForecast, res);
+          rendorPastSearches();
+          callWeatherInfo(currentSearch.length - 1);
+          callUviIndex(currentSearch.length - 1);
+          callForecast(currentSearch.length - 1);
+        });
       });
     });
   });
@@ -94,7 +101,7 @@ $(document).ready(function () {
     var days = [0, count, 2 * count, 3 * count, 4 * count];
     console.log("days= "+days);
     for (var i = 0; i < days.length; i++) {
-      var tempWeather = temp.daily[i];
+      var tempWeather = temp.list[days[i]];
       console.log("tempWeather line 96= ", tempWeather);
       var tempHead = $("<div>").attr({
         class: "col-sm-2 border rounded",
@@ -103,9 +110,10 @@ $(document).ready(function () {
       var tempDate = $("<p>").text(moment(tempWeather.dt_txt).format("MM/DD/YYYY"));
       tempDate.attr("class", "text-white");
       var tempImg = $("<img>").attr("src", getIcon(tempWeather.weather[0].icon));
-      var tempTemp = $("<p>").text("Temperature: " + farenheit(tempWeather.temp.day));
+      console.log("tempTemp= ", tempWeather.main.temp)
+      var tempTemp = $("<p>").text("Temperature: " + farenheit(tempWeather.main.temp));
       tempTemp.attr("class", "text-white");
-      var tempHumid = $("<p>").text("Humidity: " + humidityText(tempWeather.humidity));
+      var tempHumid = $("<p>").text("Humidity: " + humidityText(tempWeather.main.humidity));
       tempHumid.attr("class", "text-white");
 
       tempHead.append(tempDate, tempImg, tempTemp, tempHumid);
@@ -115,9 +123,9 @@ $(document).ready(function () {
   };
 
   function callUviIndex(index) {
-    let temp = currentSearch[index].forecast.current.uvi;
+    let temp = currentSearch[index].uviIndex.current.uvi;
     console.log("uvi temp= ", temp);
-    $("#currentUVI").text("UVI Index: " + temp.value);
+    $("#currentUVI").text("UVI Index: " + temp);
   }
 
   function updateWeather(location, currentObjectWeather, forecast, uviIndex) {
