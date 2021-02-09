@@ -7,6 +7,8 @@ To create a weather app using an API that will display users searched cities cur
 One challenge not overcome was to refresh the five day forecast when selecting a past search city. This function only updated the current temp card, leaving the five day cards as the previous search.
 Additional steps were taken to update the css and html- this site was built from the ground up. 
 
+<img src = "Weather App using API" alt = "screenshot of website"> 
+
 ### The Problem
 AS A travelerI WANT to see the weather outlook for multiple cities 
 SO THAT I can plan a trip accordingly
